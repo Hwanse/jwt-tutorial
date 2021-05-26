@@ -1,0 +1,35 @@
+spring:
+  security:
+    user:
+      name: user
+      password: 1234
+
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: 'jdbc:h2:mem:jwt_test'
+    username: sa
+    password:
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+defer-datasource-initialization: true
+logging:
+  level:
+    me.hwanse: debug
+
+jwt:
+  header: Authorization
+  # hwanse-spring-boot-jwt-start-secret-hwanse-spring-boot-jwt-start-secret-hwanse-spring-boot-jwt-start-secret
+  secret: aHdhbnNlLXNwcmluZy1ib290LWp3dC1zdGFydC1zZWNyZXQtaHdhbnNlLXNwcmluZy1ib290LWp3dC1zdGFydC1zZWNyZXQtaHdhbnNlLXNwcmluZy1ib290LWp3dC1zdGFydC1zZWNyZXQK
+  token-validity-in-seconds: 86400
